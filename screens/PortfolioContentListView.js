@@ -31,7 +31,6 @@ export default function PortfolioList({ navigation, route }) {
     const updateData = (marketData) => {
         db.transaction(tx => {
             tx.executeSql('select * from owned_stocks WHERE s_portfolio_id = ?', [route.params.portfolio.p_id], async (_, { rows }) => {
-                console.log(rows._array);
                 if (rows._array.length > 0) {
                     let symbolList = "";
                     rows._array.map((stock) => {
@@ -66,9 +65,6 @@ export default function PortfolioList({ navigation, route }) {
     }
 
     const saveStock = (stock, selectedStock) => {
-        console.log("Saving stock..");
-        console.log(selectedStock);
-        console.log(stock);
         db.transaction(tx => {
             tx.executeSql('insert into owned_stocks (s_name, s_symbol, s_isin, s_currency, s_sector, s_sector_fin, s_icb, s_price, s_amount, s_bought_date, s_portfolio_id) values(?,?,?,?,?,?,?,?,?,?,?);',
                 [selectedStock.name, selectedStock.symbol, selectedStock.ISIN, selectedStock.currency, selectedStock.Sector, selectedStock.Sector_FI, selectedStock.ICB_Code, stock.stockPrice.replace(",", "."), stock.stockAmount, null, route.params.portfolio.p_id]);
