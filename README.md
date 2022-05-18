@@ -21,6 +21,14 @@ Kaikki data tallennetaan paikallisesti käyttäjän laitteelle (SQLite.)
 - More statistics
 - Support for multiple purchases of stocks (meaning the same stock wont show twice, but details about the second purchase exists)
 
+## Extra Packages / Components
+
+- react-native-picker/picker
+- react-native-autocomplete-input
+- react-native-modal-datetime-picker
+- react-native-picker-select
+- react-native-chart-kit
+
 ## Dependencies
 
 ```bash
@@ -52,7 +60,7 @@ Kaikki data tallennetaan paikallisesti käyttäjän laitteelle (SQLite.)
 
 ## Demo
 
-- [Expo address](https://expo.dev/@S1nd5/)
+- [Expo URL](https://expo.dev/@s4nd5/stockportfolio-app)
 
 ## Environment Variables
 
