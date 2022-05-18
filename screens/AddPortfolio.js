@@ -16,6 +16,8 @@ export default function OverlayForm(props) {
     setOverlayViewState(props.status);
   }, [props.status])
 
+  /* Handle the "form submit" after all inputs are filled */
+
   const handleCreation = () => {
     if (!formValues.portfolioName || formValues.portfolioName.length < 5) {
       setDialogText("Salkun nimi on virheellinen tai liian lyhyt.")
@@ -31,6 +33,8 @@ export default function OverlayForm(props) {
     props.callbackFunction(formValues);
     setFormValues({});
   }
+
+  /* General Render */
 
   return (
     <KeyboardAvoidingView>

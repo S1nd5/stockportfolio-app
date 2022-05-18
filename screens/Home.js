@@ -9,12 +9,14 @@ export default function Home() {
     const screenWidth = Dimensions.get("window").width;
 
     /* Mock Data */
+    
     let data = [
         { id: "HEL", name: "OMXH25", title: "Helsinki", points: 4920.59, points_up: 14.56, percentage_up: 0.30 },
         { id: "STO", name: "OMXS30", title: "Stockholm", points: 2097.9, points_up: 5.035, percentage_up: 0.24 }
     ]
 
     /* Flatlist Render Item */
+
     const renderItem = ({ item }) => (
         <ListItem key="omxh25">
             <ListItem.Content>

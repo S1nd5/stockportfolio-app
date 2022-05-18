@@ -14,10 +14,10 @@ export default function ErrorDialog(props) {
             isVisible={dialogViewState}
             onBackdropPress={() => setDialogViewState(false)}
         >
-        <Dialog.Title title={props.title}/>
+            <Dialog.Title title={props.title} />
             <Text>{props.text}</Text>
             <Dialog.Actions>
-                <Dialog.Button title="Ok" onPress={() => {props.closeDialog()}} status="primary"/>
+                <Dialog.Button title="Ok" onPress={() => { props.closeDialog() }} status="primary" />
             </Dialog.Actions>
         </Dialog>
     )

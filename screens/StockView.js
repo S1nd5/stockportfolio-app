@@ -26,6 +26,10 @@ export default function PortfolioList({ navigation, route }) {
     const [loadingData, setLoadingData] = useState(true);
     const [loadingChart, setLoadingChart] = useState(true);
 
+    /* API Header options
+        Reads the API_KEY from .env file
+    */
+
     const options = {
         method: 'GET',
         headers: {
@@ -34,10 +38,14 @@ export default function PortfolioList({ navigation, route }) {
         }
     };
 
+    /* When data is received from the API, save it and stop loading */
+
     const dataReady = (data) => {
         setLiveStockData(data);
         setLoadingData(false);
     }
+
+    /* Generates data for stock price chart */
 
     const generateChartData = (liveData) => {
         const months = ["Tammikuu", "Helmikuu", "Maaliskuu", "Huhtikuu", "Toukokuu", "Kesäkuu", "Heinäkuu", "Elokuu", "Syyskuu", "Lokakuu", "Marraskuu", "Joulukuu"];
@@ -63,10 +71,14 @@ export default function PortfolioList({ navigation, route }) {
         setChartData(data);
     }
 
+    /* When chart data is received from the API, save it and stop the chart loading */
+
     const chartDataReady = (data) => {
         generateChartData(data);
         setLoadingChart(false);
     }
+
+    /* Get Chart Data from Yahoo */
 
     const getChartData = (stockSymbol) => {
         fetch(`https://yh-finance.p.rapidapi.com/stock/v3/get-chart?interval=1mo&symbol=${stockSymbol}.HE&range=ytd&region=FI&includePrePost=false&useYfid=true&includeAdjustedClose=true&events=capitalGain%2Cdiv%2Csplit`, options)
@@ -74,6 +86,8 @@ export default function PortfolioList({ navigation, route }) {
             .then(response => chartDataReady(response))
             .catch(err => console.error(err));
     }
+
+    /* Get live stock quotes from Yahoo */
 
     const getLiveData = (stockSymbol) =>
         fetch(`https://yh-finance.p.rapidapi.com/stock/v2/get-summary?symbol=${stockSymbol}.HE&region=FI`, options)

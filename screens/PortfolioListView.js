@@ -27,11 +27,15 @@ export default function Portfolio() {
         })
     }
 
+    /* Removes portfolio from the database */
+
     const removePortfolio = (id) => {
         db.transaction(
             tx => tx.executeSql('delete from portfolios where p_id = ?;', [id]), null, updateData
         )
     }
+
+    /* Saves new portfolio to the database */
 
     const savePortfolio = (portfolio) => {
         db.transaction(tx => {

@@ -14,11 +14,11 @@ export default function Dialogi(props) {
             isVisible={dialogViewState}
             onBackdropPress={() => setDialogViewState(false)}
         >
-        <Dialog.Title title={props.title}/>
+            <Dialog.Title title={props.title} />
             <Text>{props.text}</Text>
             <Dialog.Actions>
-                <Dialog.Button title="Poista" onPress={() => {props.callbackFunction(props.item)}} buttonStyle={{ backgroundColor: 'red' }} titleStyle={{color: 'white', fontWeight: 'bold'}}/>
-                <Dialog.Button title="Peruuta" onPress={() => {props.closeDialog()}} status="primary"/>
+                <Dialog.Button title="Poista" onPress={() => { props.callbackFunction(props.item) }} buttonStyle={{ backgroundColor: 'red' }} titleStyle={{ color: 'white', fontWeight: 'bold' }} />
+                <Dialog.Button title="Peruuta" onPress={() => { props.closeDialog() }} status="primary" />
             </Dialog.Actions>
         </Dialog>
     )

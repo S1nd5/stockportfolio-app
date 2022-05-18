@@ -16,7 +16,9 @@ export default function PortfolioList({ navigation, route }) {
     const [loading, setLoading] = useState(true);
     const db = SQLite.openDatabase('stockportfolio.db');
 
-    /* API Stuff */
+    /* API Header options
+        Reads the API_KEY from .env file
+    */
 
     const options = {
         method: 'GET',
@@ -26,7 +28,9 @@ export default function PortfolioList({ navigation, route }) {
         }
     };
 
-    /* SQLite database functionatility */
+    /* SQLite database functionatility
+        Fetching, Updates, Inserts, Deletes.
+    */
 
     const updateData = (marketData) => {
         db.transaction(tx => {
@@ -58,11 +62,15 @@ export default function PortfolioList({ navigation, route }) {
         })
     }
 
+    /* Removes stock from the portfolio */
+
     const removeStock = (id) => {
         db.transaction(
             tx => tx.executeSql('delete from owned_stocks where s_id = ?;', [id]), null, updateData
         )
     }
+
+    /* Inserts a stock to the portfolio */
 
     const saveStock = (stock, selectedStock) => {
         db.transaction(tx => {
@@ -83,10 +91,14 @@ export default function PortfolioList({ navigation, route }) {
         setOverlayStatus(true);
     }
 
+    /* Opens detailed view of a specific stock */
+
     const openStock = (item) => {
         navigation.setParams({ stock: item });
         navigation.navigate("StockContent", { stock: item });
     }
+
+    /* Opens confirmation dialog for deleting stock */
 
     const deleteStock = (item) => {
         setTargetStock(item);

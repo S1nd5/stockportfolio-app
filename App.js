@@ -12,7 +12,9 @@ import StockView from './screens/StockView';
 
 const Tab = createBottomTabNavigator();
 
-/* Back button for header with tab bar bottom */
+/* Back button for header with tab bar 
+  --> Helps user to navigate without needing to have all tabs on the bottom bar
+*/
 
 const backButton = () => {
   const navigation = useNavigation();

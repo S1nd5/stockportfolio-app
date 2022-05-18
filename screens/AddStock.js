@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button, Overlay, Icon, Input } from '@rneui/themed';
-import { Text, StyleSheet, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
+import { Text, KeyboardAvoidingView, TouchableOpacity } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import ErrorDialog from '../components/ErrorDialog';
 import AutocompleteInput from 'react-native-autocomplete-input';
@@ -21,10 +21,16 @@ export default function OverlayForm(props) {
     setOverlayViewState(props.status);
   }, [props.status])
 
+  /* When datepicker confirms, set the date and close picker */
+
   const handleDateConfirm = (date) => {
     setFormValues({ ...formValues, stockDate: date });
     setDatepickerStatus(false);
   }
+
+  /* Method for filtering data against Nasdaq Helsinki data file 
+    Compares by name.
+  */
 
   const findStock = (query) => {
     if (query) {
@@ -36,6 +42,8 @@ export default function OverlayForm(props) {
       setFilteredData([]);
     }
   };
+
+    /* Handle the "form submit" after all inputs are filled, validate inputs and raise an error if needed */
 
   const handleCreation = () => {
     if (!formValues.stockName) {
@@ -70,6 +78,8 @@ export default function OverlayForm(props) {
     setSelectedValue('');
     setOverlayViewState(false);
   }
+
+  /* Main Rendering */
 
   return (
     <KeyboardAvoidingView>
