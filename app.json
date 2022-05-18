@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "Stockportfolio App on mobiiliapplikaatio sijoitusten kirjaamiseen ja ylläpitoon varten. Käyttäjä voi luoda sovellukseen osakesalkkuja, jonka tyyppi voi olla arvo-osuustili tai osakesäästötili. Salkun sisään voi lisätä ja sieltä voi poistaa osakkeita. Sovellus on yhteydessä rajapintayhteydellä (REST) Yahoo Finance APIi:n, joka tarjoaa reaaliaikaiset kurssit ja muita lisätietoja yrityksistä käyttäjän nähtäville.\n\nKaikki data tallennetaan paikallisesti käyttäjän laitteelle (SQLite.)",
+    "githubUrl": "https://github.com/S1nd5/stockportfolio-app"
   }
 }

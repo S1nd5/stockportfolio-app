@@ -45,9 +45,6 @@ export default function Portfolio() {
             tx.executeSql('create table if not exists portfolios (p_id integer primary key not null, p_name varchar, p_type varchar);');
         }, null, updateData)
         db.transaction(tx => {
-            tx.executeSql('drop table owned_stocks');
-        }, null, null)
-        db.transaction(tx => {
             tx.executeSql('create table if not exists owned_stocks (s_id integer primary key not null, s_name varchar not null, s_symbol varchar not null, s_isin varchar not null, s_currency varchar not null, s_sector varchar not null, s_sector_fin varchar not null, s_icb varchar not null, s_price not null, s_amount int not null, s_bought_date varchar, s_portfolio_id integer not null);');
         }, null, null)
     }, [])
