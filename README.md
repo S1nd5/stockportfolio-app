@@ -1,6 +1,6 @@
 # Stockportfolio App [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](http://www.gnu.org/licenses/mit-3.0)
 
-Stockportfolio App on mobiiliapplikaatio sijoitusten kirjaamiseen ja ylläpitoon varten. Käyttäjä voi luoda sovellukseen osakesalkkuja, jonka tyyppi voi olla arvo-osuustili tai osakesäästötili. Salkun sisään voi lisätä ja sieltä voi poistaa osakkeita. Sovellus on yhteydessä rajapintayhteydellä (REST) Yahoo Finance APIi:n, joka tarjoaa reaaliaikaiset kurssit ja muita lisätietoja yrityksistä käyttäjän nähtäville.
+Stockportfolio App on mobiiliapplikaatio sijoitusten kirjaamiseen ja ylläpitoon varten. Käyttäjä voi luoda sovellukseen osakesalkkuja, jonka tyyppi voi olla arvo-osuustili tai osakesäästötili. Salkun sisään voi lisätä ja sieltä voi poistaa osakkeita. Sovellus on yhteydessä rajapintayhteydellä (REST) Yahoo Finance API:n, joka tarjoaa reaaliaikaiset kurssit ja muita lisätietoja yrityksistä käyttäjän nähtäville.
 
 Kaikki data tallennetaan paikallisesti käyttäjän laitteelle (SQLite.)
 
@@ -18,16 +18,17 @@ Kaikki data tallennetaan paikallisesti käyttäjän laitteelle (SQLite.)
 
 ## Todo
 
-- More statistics
+- Something for the "Home" -page such as your earnings today
+- More statistics (1d, 7d, 30d, 3mo, 6mo, 12mo earnings?)
+- Pie chart of portfolio by (industry, quantity etc)
 - Support for multiple purchases of stocks (meaning the same stock wont show twice, but details about the second purchase exists)
 
 ## Extra Packages / Components
 
-- react-native-picker/picker
-- react-native-autocomplete-input
-- react-native-modal-datetime-picker
-- react-native-picker-select
-- react-native-chart-kit
+- [react-native-autocomplete-input](https://github.com/mrlaessig/react-native-autocomplete-input)
+- [react-native-modal-datetime-picker](https://github.com/mmazzarolo/react-native-modal-datetime-picker)
+- [react-native-picker-select](https://www.npmjs.com/package/react-native-picker-select)
+- [react-native-chart-kit](https://www.npmjs.com/package/react-native-chart-kit)
 
 ## Dependencies
 
