@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_KEY } from "react-native-dotenv";
 import { View, FlatList, Dimensions } from 'react-native';
 import * as SQLite from 'expo-sqlite';
 import { Card, Button, Badge, ListItem, FAB, Skeleton } from '@rneui/themed';
@@ -21,7 +22,7 @@ export default function PortfolioList({ navigation, route }) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '562a843232mshbb44848d851c710p1681dbjsndf020fddc8fd'
+            'X-RapidAPI-Key': API_KEY
         }
     };
 

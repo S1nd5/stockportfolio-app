@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_KEY } from "react-native-dotenv";
 import { Text, View, ScrollView, Dimensions } from 'react-native';
 import { Card, Icon, Badge, Tab, TabView, Skeleton } from '@rneui/themed';
 import { LineChart } from "react-native-chart-kit";
@@ -29,7 +30,7 @@ export default function PortfolioList({ navigation, route }) {
         method: 'GET',
         headers: {
             'X-RapidAPI-Host': 'yh-finance.p.rapidapi.com',
-            'X-RapidAPI-Key': '562a843232mshbb44848d851c710p1681dbjsndf020fddc8fd'
+            'X-RapidAPI-Key': API_KEY
         }
     };
 
